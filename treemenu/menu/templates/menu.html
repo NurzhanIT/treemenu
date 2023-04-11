@@ -1,12 +1,13 @@
 {%load menu_tags%}
-{% for menulist_item in menu %}
 
-        {% if forloop.first %}<ul class="{% if item.parent == 0 %}menu{% else %}submenu{% endif %}">{% endif %}
-        <li class="menu-item-{{ item.id }}">
-            <a href="{{ menulist_item.path }}" class="{% if item.active %}selected{% endif %}">
-                {{ menulist_item.menu_item_name }}
+{% for menu_item in menu_items %}
+
+        {% if forloop.first %}<ul class="{% if menu_item.parent == 0 %}menu{% else %}sub-menu{% endif %}">{% endif %}
+        <li class="menu-item {{ menu_item.id }}">
+            <a href="{{ menulist_item.path }}" class="{% if menu_item.is_active %}selected{% endif %}">
+                {{ menu_item.menu_item_name }}
             </a>
-
+             {% draw_menu name menu_item.id %}
         </li>
         {% if forloop.last %}</ul>{% endif %}
 {% endfor %}

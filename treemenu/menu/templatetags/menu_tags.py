@@ -30,7 +30,8 @@ def draw_menu(context, name, parent=0):
                 'parent': parent_id,
                 'menu_item_name':menu_item.name,
                 'name':name,
+
             })
             print(menu_items_data, 'menu_items_data')
 
-    return {'menu': menu_items_data}
+    return {'menu': menu_items_data, 'menu_items': (menu_item for menu_item in menu_items_data if menu_item['parent'] == parent)}
