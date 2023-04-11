@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                     INSERT INTO menu_menulistitem (id, name, menu_id, parent_id, path) 
                        VALUES (6, 'цены', 1,null, '/prices');
                     INSERT INTO menu_menulistitem (id, name, menu_id, parent_id, path) 
-                       VALUES (7, 'акции', 1,6, 'prices/promotion');
+                       VALUES (7, 'акции', 1,6, '/prices/promotion');
                     INSERT INTO menu_menulistitem (id, name, menu_id, parent_id, path) 
                        VALUES (8, 'скидки', 1,6, '/prices/sales');
                     INSERT INTO menu_menulistitem (id, name, menu_id, parent_id, path) 
