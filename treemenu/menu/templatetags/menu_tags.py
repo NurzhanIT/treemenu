@@ -20,7 +20,7 @@ def draw_menu(context, name, parent=0):
             print(parent_id)
             print(menu_item.pk, 'id')
             is_active = True if menu_item.path == current_path and current_path else False
-
+            is_url = True if check_path.match(menu_item.path) else False
             menu_items_data.append({
                 'id': menu_item.pk,
                 'path': menu_item.path,
@@ -29,7 +29,7 @@ def draw_menu(context, name, parent=0):
                 'parent': parent_id,
                 'menu_item_name': menu_item.name,
                 'name': name,
-
+                'is_url':is_url,
             })
 
     return {'menu': menu_items_data,
