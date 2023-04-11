@@ -17,6 +17,7 @@ class MenuListItem(models.Model):
     name = models.CharField(max_length=25, blank=True, null=False)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE, blank=False, null=False)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=0)
+    path = models.CharField( max_length= 255,blank=True, null=False)
 
     class Meta:
         verbose_name = 'Menu item'
