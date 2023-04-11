@@ -7,7 +7,7 @@ register = template.Library()
 @register.inclusion_tag('menu.html',takes_context=True)
 def draw_menu(context, name, parent=0):
 
-    menu_items = MenuListItem.objects.filter(menu__name=name)
+    menu_items = MenuListItem.objects.filter(menu__name=name).select_related('parent')
     if parent != 0 and 'menu' in context:
         print(context['menu'])
         menu_items_data = context['menu']

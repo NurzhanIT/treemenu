@@ -9,8 +9,11 @@
     <title>Tree Menu</title>
 </head>
 <body>
-    <header>
-        {% draw_menu 'main menu'%}
+    <header class="header">
+        <div class="header_inner _container">
+            <div class="logo">Я Лого</div>
+            <div class="header-menu">{% draw_menu 'main menu'%}</div>
+        </div>
     </header>
     <main>
     {% block content %}{% endblock %}

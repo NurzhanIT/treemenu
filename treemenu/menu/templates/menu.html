@@ -4,11 +4,10 @@
 
         {% if forloop.first %}<ul class="{% if menu_item.parent == 0 %}menu{% else %}sub-menu{% endif %}">{% endif %}
         <li class="menu-item {{ menu_item.id }}">
-            <a href="{{ menulist_item.path }}" class="{% if menu_item.is_active %}selected{% endif %}">
+            <a href="{{ menu_item.path }}" class="{% if menu_item.is_active %}selected{% endif %}">
                 {{ menu_item.menu_item_name }}
             </a>
              {% draw_menu name menu_item.id %}
         </li>
         {% if forloop.last %}</ul>{% endif %}
 {% endfor %}
-
