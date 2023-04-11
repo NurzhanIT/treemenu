@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -13,11 +14,12 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
+
 class MenuListItem(models.Model):
     name = models.CharField(max_length=25, blank=True, null=False)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE, blank=False, null=False)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=0)
-    path = models.CharField( max_length= 255,blank=True, null=False)
+    path = models.CharField(max_length=255, blank=True, null=False, unique=True)
 
     class Meta:
         verbose_name = 'Menu item'
